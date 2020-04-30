@@ -7,9 +7,7 @@ class Phonebook extends Component {
     number: "",
   };
 
-  handlerChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+  handlerChange = ({ target: { name, value } }) => {
     this.setState({
       [name]: value,
     });

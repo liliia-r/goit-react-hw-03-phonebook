@@ -50,7 +50,7 @@ export default class App extends Component {
   };
 
   async componentDidMount() {
-    const savedContacts = storage.get("addedContacts");
+    const savedContacts = storage.get("contacts");
     if (savedContacts) {
       this.setState({
         contacts: savedContacts,
@@ -60,8 +60,7 @@ export default class App extends Component {
 
   updateStorage = (prevState) => {
     if (prevState.contacts !== this.state.contacts) {
-      storage.save("addedContacts", this.state.contacts);
-      console.log("update");
+      storage.save("contacts", this.state.contacts);
     }
   };
 
